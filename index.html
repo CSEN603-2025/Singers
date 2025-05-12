@@ -1,256 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUC Internship Portal | Student Login</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="css/auth.css">
-    <style>
-        :root {
-            --primary: #2C5F2D; /* GUC green */
-            --primary-light: #4CAF50;
-            --secondary: #FFC107;
-            --dark: #263238;
-            --light: #f5f5f5;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            color: var(--dark);
-        }
-        
-        .auth-container {
-            display: flex;
-            min-height: 100vh;
-        }
-        
-        .auth-hero {
-            flex: 1;
-            background: linear-gradient(135deg, var(--primary), #4CAF50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            color: white;
-        }
-        
-        .auth-hero-content {
-            max-width: 500px;
-        }
-        
-        .auth-hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .auth-card {
-            width: 100%;
-            max-width: 450px;
-            padding: 3rem 2rem;
-            background: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        
-        .logo img {
-            height: 40px;
-            margin-right: 12px;
-        }
-        
-        .logo span {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        h1 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-        
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.1);
-        }
-        
-        .btn-primary {
-            width: 100%;
-            padding: 1rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-light);
-        }
-        
-        .user-type-selector {
-            margin: 1.5rem 0;
-        }
-        
-        .user-type-selector label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        select {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            background: white;
-        }
-        
-        .auth-footer {
-            margin-top: 2rem;
-            text-align: center;
-            font-size: 0.875rem;
-        }
-        
-        .auth-footer a {
-            color: var(--primary);
-            font-weight: 500;
-            text-decoration: none;
-        }
-        
-        @media (max-width: 768px) {
-            .auth-container {
-                flex-direction: column;
-            }
-            
-            .auth-hero {
-                display: none;
-            }
-            
-            .auth-card {
-                max-width: 100%;
-                padding: 2rem 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GUC Internship System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #b30000;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+    .welcome-box {
+      background-color: #ffe5e5;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .welcome-box h1 {
+      margin-bottom: 10px;
+      color: #990000;
+    }
+
+    .welcome-box p {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .welcome-box button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .welcome-box button:hover {
+      background-color: #a30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      background-color: #b30000;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <main class="auth-container">
-        <div class="auth-card">
-            <a href="#" class="logo">
-                <img src="assets/guc-logo.png" alt="GUC Logo">
-                <span>GUC Internship Portal</span>
-            </a>
-            
-            <h1>Student Login</h1>
-            
-            <form class="auth-form" id="loginForm">
-                <div class="form-group">
-                    <label for="email">University Email</label>
-                    <input type="email" id="email" placeholder="firstname.lastname@guc.edu.eg" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                </div>
-                
-                <div class="user-type-selector">
-                    <label for="userType">Login As</label>
-                    <select id="userType" required>
-                        <option value="">Select your role</option>
-                        <option value="student">Undergraduate Student</option>
-                        <option value="pro_student">PRO Student</option>
-                        <option value="faculty">Faculty Member</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="btn-primary">Sign In</button>
-            </form>
-            
-            <div class="auth-footer">
-                <p>Need help? <a href="#">Contact SCAD Office</a></p>
-                <p>Company representative? <a href="company/register.html">Company login</a></p>
-            </div>
-        </div>
-        
-        <div class="auth-hero">
-            <div class="auth-hero-content">
-                <h2>Launch Your Career</h2>
-                <p>Connect with top companies through GUC's internship program. Gain real-world experience and build your professional network.</p>
-                <ul style="margin-top: 1.5rem; line-height: 1.6;">
-                    <li>Browse hundreds of internship opportunities</li>
-                    <li>Track your applications in one place</li>
-                    <li>Submit internship reports online</li>
-                    <li>Get matched with companies based on your skills</li>
-                </ul>
-            </div>
-        </div>
-    </main>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Apply</a>
+      <a href="#">Reports</a>
+      <a href="#">Evaluation</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const userType = document.getElementById('userType').value;
-            
-            // Simple validation
-            if (!email || !password || !userType) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            // Redirect based on user type
-            switch(userType) {
-                case 'student':
-                case 'pro_student':
-                    window.location.href = 'student/dashboard.html';
-                    break;
-                case 'faculty':
-                    window.location.href = 'faculty/dashboard.html';
-                    break;
-                default:
-                    alert('Please select a valid user type');
-            }
-        });
-    </script>
+  <main>
+    <div class="welcome-box">
+      <h1>Welcome to GUC Internship System</h1>
+      <p>Manage your internship process from application to evaluation</p>
+      <button onclick="window.location.href='login.html'">Log In</button>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 German University in Cairo - Media Engineering and Technology
+  </footer>
 </body>
 </html>

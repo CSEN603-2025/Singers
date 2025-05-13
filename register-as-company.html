@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Company | GUC Internship Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../Styles/register.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Register Your Company</h2>
+
+    <form id="registerCompanyForm">
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" id="companyName" required>
+      </div>
+
+      <div class="form-group">
+        <label>Industry</label>
+        <input type="text" id="industry" required>
+      </div>
+
+      <div class="form-group">
+        <label>Company Size</label>
+        <select id="companySize" required>
+          <option value="">Select Size</option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+          <option>Corporate</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Official Email</label>
+        <input type="email" id="companyEmail" required>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="companyPassword" required>
+      </div>
+
+      <div class="form-group">
+        <label>Company Logo</label><br>
+        <input type="file" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label>Upload Legitimacy Documents</label><br>
+        <input type="file" accept=".pdf,.doc,.docx,.jpg,.png" required>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("registerCompanyForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const company = {
+        name: document.getElementById("companyName").value.trim(),
+        industry: document.getElementById("industry").value.trim(),
+        size: document.getElementById("companySize").value,
+        email: document.getElementById("companyEmail").value.trim().toLowerCase(),
+        password: document.getElementById("companyPassword").value
+      };
+
+      if (!company.name || !company.industry || !company.size || !company.email || !company.password) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      localStorage.setItem("registeredCompany", JSON.stringify(company));
+      alert("Company registered successfully!");
+        window.location.href = "../main.html";
+    });
+  </script>
+</body>
+</html>

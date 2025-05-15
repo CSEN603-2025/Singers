@@ -14,7 +14,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     return;
   }
 
-  // Student & Faculty Login
+  // Student, Faculty & SCAD Login
   if (domain === "student.guc.edu.eg") {
     localStorage.setItem("userType", "regular");
     window.location.href = "pages/student/dashboard.html";
@@ -22,6 +22,8 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     localStorage.setItem("userType", "pro");
     window.location.href = "pages/student/dashboard.html";
   } else if (domain === "scad.guc.edu.eg") {
+    window.location.href = "pages/scad-dashboard.html";
+  } else if (domain === "guc.edu.eg") {
     window.location.href = "pages/faculty/dashboard.html";
   } else {
     alert("Invalid credentials or email.");
